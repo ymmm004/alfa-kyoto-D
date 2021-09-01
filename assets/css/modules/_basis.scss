@@ -1,0 +1,59 @@
+/****************************
+ * 共通CSSのテンプレートです。
+*****************************/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html {
+  font-size: 18px;
+  box-sizing: border-box;
+}
+body {
+  overflow-x: hidden;
+  font-family: "游ゴシック体", "Yu Gothic", YuGothic, "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif;
+  font-size: 18px;
+  line-height: (32/18);
+  font-weight: bold;
+  text-decoration: none;
+  border: none;
+  list-style: none;
+  color: #000;
+  margin: 0;
+}
+img {
+  width: 100%;
+}
+figure {
+  margin: 0;
+}
+figcaption {
+  margin-top: 30px;
+  font-size: 14px;
+  @media screen and (max-width: 767px) {
+    font-size: 13px;
+  }
+}
+input[type=text] {
+  font-size: 18px;
+  border: none;
+  padding: 25px 35px;
+  display: block;
+  margin: 0 auto;
+  max-width: 580px;
+  width: 100%;
+}
+::placeholder {
+  color: #999;
+}
+button {
+  cursor: pointer;
+  display: block;
+  border: none;
+  margin: 0 auto;
+  background-color: #006837;
+  color: #fff;
+  width: 287px;
+  height: 55px;
+}

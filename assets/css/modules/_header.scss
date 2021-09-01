@@ -1,0 +1,21 @@
+/****************
+* header
+*****************/
+.header {
+  background-color: #fff;
+  height: 60px;
+}
+.header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+.header__logo {
+  width: 200px;
+  height: 42.8px;
+}
+.header__name {
+  font-size: 20px;
+  line-height: 1.1;
+}

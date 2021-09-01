@@ -1,0 +1,512 @@
+@charset "UTF-8";
+/****************************
+ * 共通CSSのテンプレートです。
+*****************************/
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  font-size: 18px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+  font-family: "游ゴシック体", "Yu Gothic", YuGothic, "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif;
+  font-size: 18px;
+  line-height: 1.77778;
+  font-weight: bold;
+  text-decoration: none;
+  border: none;
+  list-style: none;
+  color: #000;
+  margin: 0;
+}
+
+img {
+  width: 100%;
+}
+
+figure {
+  margin: 0;
+}
+
+figcaption {
+  margin-top: 30px;
+  font-size: 14px;
+}
+
+@media screen and (max-width: 767px) {
+  figcaption {
+    font-size: 13px;
+  }
+}
+
+input[type=text] {
+  font-size: 18px;
+  border: none;
+  padding: 25px 35px;
+  display: block;
+  margin: 0 auto;
+  max-width: 580px;
+  width: 100%;
+}
+
+::-webkit-input-placeholder {
+  color: #999;
+}
+
+:-ms-input-placeholder {
+  color: #999;
+}
+
+::-ms-input-placeholder {
+  color: #999;
+}
+
+::placeholder {
+  color: #999;
+}
+
+button {
+  cursor: pointer;
+  display: block;
+  border: none;
+  margin: 0 auto;
+  background-color: #006837;
+  color: #fff;
+  width: 287px;
+  height: 55px;
+}
+
+/*******************
+* Layout
+*******************/
+.section {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.section--clear {
+  /* ステージクリア画面 */
+  position: fixed;
+  display: none;
+  /* 読み込み時に一瞬表示されるのを防ぐ */
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 200;
+}
+
+.section--clear.isClear {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.container {
+  width: 1100px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 1100px) {
+  .container {
+    width: calc(100% - 40px);
+  }
+}
+
+.row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-line-pack: stretch;
+      align-content: stretch;
+  gap: 10px;
+}
+
+.row + .row {
+  margin-top: 20px;
+}
+
+.column {
+  width: 100%;
+}
+
+.card {
+  background-color: #fff;
+  margin-bottom: 20px;
+  height: 100%;
+}
+
+.card__title {
+  font-size: 18px;
+  text-align: center;
+  margin: 0;
+  padding: 20px 30px;
+  position: relative;
+  cursor: pointer;
+}
+
+.card__content {
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  font-size: 16px;
+  padding: 20px 30px;
+  margin: 0;
+  position: relative;
+}
+
+.card__content::before {
+  display: block;
+  content: '';
+  width: calc(100% - 60px);
+  height: 7px;
+  background-color: #fcee21;
+  position: absolute;
+  top: -10px;
+  left: 30px;
+}
+
+.hint-page .card {
+  height: auto;
+}
+
+.hint-page .card__content {
+  display: none;
+  text-align: center;
+}
+
+.hint-page .card__arrow {
+  position: absolute;
+  top: calc(50% - 12px);
+  right: 45px;
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  fill: #009245;
+  width: 12px;
+  height: 24px;
+}
+
+.hint-page .card.is-open .card__content {
+  display: block;
+}
+
+.hint-page .card.is-open .card__arrow {
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+}
+
+.box {
+  padding: 35px 30px;
+}
+
+.youtube {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%;
+}
+
+.youtube iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.youtube__container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/*********************
+* Color
+*********************/
+.bg-color--keycolor {
+  background-color: #39b54a;
+}
+
+.bg-color--subcolor {
+  background-color: #d9e021;
+}
+
+.bg-color--gray {
+  background-color: #e6e6e6;
+}
+
+/*********************
+* title
+**********************/
+.main-title {
+  margin: 0;
+}
+
+.sub-title {
+  text-align: center;
+  font-size: 18px;
+  line-height: 1.66667;
+}
+
+.sub-title__bg {
+  background-color: #fcee21;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.section-title {
+  font-size: 24px;
+  line-height: 1.75;
+  text-align: center;
+  padding: 9px 20px;
+  background-color: #d9e021;
+  margin: 0 -20px 20px -20px;
+}
+
+.section-title__stage {
+  display: inline-block;
+  margin-right: 2rem;
+}
+
+.section-title--keycolorlight {
+  background-color: #8cc63f;
+}
+
+.section-title--keycolorlight .section-title__stage {
+  color: #fff;
+}
+
+.section-title--keycolor {
+  background-color: #39b54a;
+}
+
+.section-title--story {
+  width: 330px;
+  margin: 0 auto 20px;
+}
+
+.section-title--border {
+  position: relative;
+  font-size: 30px;
+  text-align: center;
+  line-height: 1.06667;
+  margin: 0;
+  padding-bottom: 15px;
+  color: #006837;
+}
+
+.section-title--border::after {
+  position: absolute;
+  bottom: 0;
+  left: calc(50% - 95px);
+  display: block;
+  content: '';
+  background-color: #fff;
+  height: 2.6px;
+  width: 190px;
+}
+
+/******************
+* text
+******************/
+.font-eng {
+  font-style: italic;
+  font-weight: normal;
+}
+
+/*************************
+* Button
+*************************/
+.btn {
+  display: block;
+  text-decoration: none;
+  cursor: pointer;
+  background-color: #006837;
+  color: #fff;
+  font-size: 24px;
+  line-height: 1.54167;
+  text-align: center;
+  padding: 11.5px;
+  width: calc(100% - 40px);
+  max-width: 700px;
+  margin: 10px auto;
+  position: relative;
+}
+
+.btn:hover {
+  opacity: 0.7;
+}
+
+.btn__arrow {
+  position: absolute;
+  top: calc(50% - 12px);
+  right: 15px;
+  fill: #fff;
+  width: 12px;
+  height: 24px;
+}
+
+/****************
+* header
+*****************/
+.header {
+  background-color: #fff;
+  height: 60px;
+}
+
+.header .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+}
+
+.header__logo {
+  width: 330px;
+  height: 42px;
+}
+
+.header__name {
+  font-size: 20px;
+  line-height: 1.1;
+}
+
+.footer {
+  font-size: 16px;
+}
+
+.footer p:first-child {
+  margin-top: 0;
+}
+
+.footer p:last-child {
+  margin-bottom: 0;
+}
+
+/********************
+* main
+********************/
+.story__note {
+  margin: 0;
+}
+
+.story__note__outer {
+  width: 860px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 20px;
+  margin: 20px auto;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+@media screen and (max-width: 940px) {
+  .story__note__outer {
+    width: 100%;
+  }
+}
+
+.stage-column__container + .stage-column__container {
+  border-top: 2px solid #fff;
+}
+
+.answer {
+  font-size: 18px;
+  margin-bottom: 20px;
+  line-height: 80px;
+  word-spacing: 20px;
+}
+
+.err-message {
+  color: #c1272d;
+  font-size: 18px;
+  text-align: center;
+}
+
+.link-hint {
+  text-align: center;
+  display: block;
+  margin-top: 20px;
+}
+
+.clear-message {
+  background-color: #d9e021;
+  padding: 30px 30px 60px;
+  position: relative;
+}
+
+.clear-message__title {
+  position: relative;
+  display: block;
+  text-align: center;
+  color: #006837;
+  font-size: 30px;
+  padding-bottom: 10px;
+  margin-bottom: 35px;
+}
+
+.clear-message__title::after {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 183px;
+  height: 2px;
+  background-color: #fff;
+  bottom: 0;
+  left: calc(50% - (183px/2));
+}
+
+.clear-message__content {
+  text-align: center;
+}
+
+.clear-message__btn {
+  position: absolute;
+  bottom: -30px;
+  left: calc(50% - 144px);
+  width: 288px;
+  margin: 0;
+}
+
+/********************
+* Utility
+********************/
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.hidden {
+  display: none;
+}
+/*# sourceMappingURL=style.css.map */
